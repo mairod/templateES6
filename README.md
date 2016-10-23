@@ -18,3 +18,15 @@
 ##To build :
 
 Run ```npm run build```
+
+##Tools :
+
+There is a singleton for storing data and recovering it anywhere.
+
+Simply use :
+
+```
+import * as tools from './lib/tools.class.js'
+
+var storage = new tools.Storage
+```
