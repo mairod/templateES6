@@ -21,6 +21,8 @@ Run ```npm run build```
 
 ##Tools :
 
+## Storage
+
 There is a singleton for storing data and recovering it anywhere.
 
 Simply use :
@@ -29,4 +31,24 @@ Simply use :
 import * as tools from './lib/tools.class.js'
 
 var storage = new tools.Storage
+```
+
+## Framerate Visualizer
+
+There is a FPS light weight homemade visualizer very simple to use.
+
+
+![alt tag](http://www.zupimages.net/up/16/43/w3co.png)
+
+
+```
+import * as tools from './lib/tools.class.js'
+
+var frameRateUI = new tools.FrameRateUI
+```
+
+and in your ```requestAnimationFrame()``` function call :
+
+```
+frameRateUI.update()
 ```
