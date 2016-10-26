@@ -161,7 +161,7 @@ export class AudioAnalyzer {
         this.mainContainer.appendChild(this.container)
         this.audio = new Audio();
         this.audio.src = this.url;
-        this.audio.controls = this.options.controls;
+        this.audio.controls = this.options.playerUI;
         this.audio.autoplay = this.options.autoplay;
         this.audio.crossOrigin = "anonymous";
         if (this.audio.controls) {

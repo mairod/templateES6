@@ -67,13 +67,13 @@ import * as tools from './lib/tools.class.js'
 var audioAnalyzer = new tools.AudioAnalyzer({
         url: url,
         samplingFrequency: 256,
-        controls: true,
+        playerUI: true,
         autoplay: true,
         debug: true,
     })
 
 audioAnalyzer.addControlPoint({
-      bufferPosition : //your frequency
+      bufferPosition : //your frequency number between 0 and the buffer size
 })
 
 ```
@@ -97,7 +97,7 @@ audioAnalyzer.controls
 Each control as a method for changing is frequency :
 
 ```
-audioAnalyzer.controls[index].shift()
+audioAnalyzer.controls[index].shift( //your new frequency number between 0 and the buffer size )
 ```
 
 
