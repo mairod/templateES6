@@ -47,8 +47,62 @@ import * as tools from './lib/tools.class.js'
 var frameRateUI = new tools.FrameRateUI
 ```
 
-and in your ```requestAnimationFrame()``` function call :
+and in your ```requestAnimationFrame()``` call :
 
 ```
 frameRateUI.update()
+```
+
+## AudioAnalyzer
+
+The AudioAnalyzer is here to help you to build some cools animations from a sound. You will be able to create some controls points based on a frequecy for animated your elements
+
+
+![alt tag](http://zupimages.net/up/16/43/0zoj.png)
+
+
+```
+import * as tools from './lib/tools.class.js'
+
+var audioAnalyzer = new tools.AudioAnalyzer({
+        url: url,
+        samplingFrequency: 256,
+        controls: true,
+        autoplay: true,
+        debug: true,
+    })
+
+audioAnalyzer.addControlPoint({
+      bufferPosition : //your frequency
+})
+
+```
+
+
+The AudioAnalyzer has some helpful methods :
+
+```
+audioAnalyzer.hide()
+audioAnalyzer.show()
+audioAnalyzer.play()
+audioAnalyzer.update()
+```
+
+All the controls are stored in the array :
+
+```
+audioAnalyzer.controls
+```
+
+Each control as a method for changing is frequency :
+
+```
+audioAnalyzer.controls[index].shift()
+```
+
+
+And don't forget in your ```requestAnimationFrame()``` to call :
+
+```
+audioAnalyzer.update()
 ```
